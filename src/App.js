@@ -21,26 +21,29 @@ const [ tag, setTag ] = useState('')
         setStart(start + 5)
         setEnd(end + 5)
       },2000)
-      
+      console.log(photos.length)
   }
 };
 
   return (
-    <div className="App">
+    <div classNameName="App">
       <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2>
-      <div>
+      
        {
          photos.splice(start,end).map((el)=>(
-            <div>
-              <img src={el.thumbnailUrl}/>
-            <h3>{el.title}</h3>
-            <hr/>
-             {tag}
-            </div>
+          <div className="card" style={{"width": "18rem"}}>
+          <img className="card-img-top" src={el.thumbnailUrl} alt="Card image cap"/>
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+            <p className="card-text">{el.title}</p>
+            <a href="#" className="btn btn-primary">Go somewhere</a>
+          </div><hr/>
+        </div>
+        
          ))
        }
-      </div>
+      
     </div>
   );
 }
