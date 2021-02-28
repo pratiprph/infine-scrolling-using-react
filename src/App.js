@@ -32,10 +32,10 @@ function searchItem(event){
   let photo = photos.filter((el)=>el.title.includes(search_str))
   console.log(photo)
   console.log(search_str)
-  if(search_str===" "){
-    setPhotos(photos)
-  } else {
+  if(search_str){
     setPhotos(photo)
+  } else {
+    setPhotos(photos)
   }
   
 }
@@ -59,7 +59,7 @@ function searchItem(event){
        {
          photos.splice(start,end).map((el)=>(
           <tr key={el.id}>
-            <th scope="row">1</th>
+            
             <td>{el.id}</td>
             <td>{el.title}</td>
             <td><img src={el.thumbnailUrl} style={{"width":'100px',"height":"70px"}}/></td>
